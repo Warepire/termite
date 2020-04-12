@@ -657,7 +657,7 @@ void move_first(VteTerminal *vte, select_info *select, F is_match) {
     long cursor_col, cursor_row;
     vte_terminal_get_cursor_position(vte, &cursor_col, &cursor_row);
 
-    const long end_col = vte_terminal_get_column_count(vte) - 1;
+    const long end_col = vte_terminal_get_column_count(vte);
 
     auto content = get_text_range(vte, cursor_row, cursor_col, cursor_row, end_col);
 
@@ -692,7 +692,7 @@ static void move_to_eol(VteTerminal *vte, select_info *select) {
     long cursor_row;
     vte_terminal_get_cursor_position(vte, nullptr, &cursor_row);
 
-    const long end_col = vte_terminal_get_column_count(vte) - 1;
+    const long end_col = vte_terminal_get_column_count(vte);
 
     auto content = get_text_range(vte, cursor_row, 0, cursor_row, end_col);
 
@@ -718,7 +718,7 @@ static void move_forward(VteTerminal *vte, select_info *select, F is_word, bool 
     long cursor_col, cursor_row;
     vte_terminal_get_cursor_position(vte, &cursor_col, &cursor_row);
 
-    const long end_col = vte_terminal_get_column_count(vte) - 1;
+    const long end_col = vte_terminal_get_column_count(vte);
 
     auto content = get_text_range(vte, cursor_row, cursor_col, cursor_row, end_col);
 
